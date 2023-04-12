@@ -19,5 +19,17 @@
 			<value>Wadi, Nagpur</value>
 		</property>
 	</bean>
+	
+	<!-- second student -->
+	<bean class="com.springcore.entities.Student" name="student2">
+		<property name="id" value="2" />
+		<property name="name" value="Jackie Meshram" />
+		<property name="address" value="Wadi, Nagpur" />
+	</bean>
+
+	<!-- p schema means property schema -->
+	<bean class="com.springcore.entities.Student" name="student3" p:id="3" p:name="Swapnil Meshram" p:address="Wadi, Nagpur" />
+
+	<bean class="com.springcore.entities.Student" id="student4" p:id="4" p:name="Aradhana Meshram" p:address="Wadi, Nagpur" />
 
 </beans>

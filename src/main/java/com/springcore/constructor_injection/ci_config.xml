@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.springcore.constructor_injection.Certificate" name="c1">
+		<constructor-arg value="Java 8" />
+	</bean>
+	<bean class="com.springcore.constructor_injection.Person" name="p1">
+		<constructor-arg>
+			<value>101</value>
+		</constructor-arg>
+		<!-- inline value --> 
+		<constructor-arg value="Sawan Meshram" />
+		<constructor-arg ref="c1" />
+	</bean>
+
+	<!-- Used c schema tag to read constructor data -->
+	<bean class="com.springcore.constructor_injection.Certificate" name="c2" c:name="Hibernet 5" />
+	<!-- if constructor param order change then set property type to defined arg datatype --> 	
+	<bean class="com.springcore.constructor_injection.Person" name="p2">
+		<constructor-arg value="Jackie Meshram" />
+		<constructor-arg value="102" type="int" />
+		<constructor-arg ref="c2" /> 
+	</bean>
+
+	<!-- association reference for loose couple -->
+	<bean class="com.springcore.constructor_injection.Certificate" name="c3" c:name="Spring Framework" />
+	<bean class="com.springcore.constructor_injection.Person" name="p3" c:id="103" c:name="Ram" c:certificate-ref="c3" />
+	
+	<!-- List collection declaration -->
+	<bean class="com.springcore.constructor_injection.Certificate" name="c4" c:name="C and C++ Language" />
+	<bean class="com.springcore.constructor_injection.Person" name="p4">
+		<constructor-arg value="104"/> 
+		<constructor-arg value="Rajkumar" />
+		<constructor-arg ref="c4" />
+		<constructor-arg>
+			<list>
+				<value>Nagpur</value>
+				<value>Pune</value>
+				<value>Mumbai</value>
+			</list>
+		</constructor-arg> 
+	</bean>
+	
+</beans>
