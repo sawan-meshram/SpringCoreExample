@@ -6,6 +6,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class StudentMain {
 
 	public static void main(String[] args) {
+		/*
+		 * Scope as annotation
+		 */
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/springcore/stereotype_annotation/stereotype_config.xml");
 		
 		//defined the bean name as Student class variable name, naming convention used here
@@ -20,6 +23,16 @@ public class StudentMain {
 		
 		System.out.println(s1.getCities().getClass().getName()); //java.util.ArrayList
 
+		System.out.println(s1.hashCode()); //hashcode=112466394
+		
+		
+		Student s2 = context.getBean("stud1", Student.class);
+		
+		/*
+		 * When two object of Student has return the same hashcode then class has "singleton scope"
+		 * But, when we used Scope annotation with defined as "prototype" then each class object has given different hashcode.
+		 */
+		System.out.println(s2.hashCode()); //hashcode=112466394
 	}
 
 }

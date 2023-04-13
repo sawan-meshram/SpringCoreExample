@@ -3,6 +3,7 @@ package com.springcore.stereotype_annotation;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /*
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Component;
  * But if we give the name to component then must used this name to get class bean
  */
 @Component("stud1")
+@Scope("prototype")
 public class Student {
 	@Value("101")
 	private int id;
