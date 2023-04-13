@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+	
+	<!-- standalone listn example -->
+	<util:list list-class="java.util.ArrayList" id="personFriends">
+		<value>Sawan</value>
+		<value>Jackie</value>
+		<value>Ram</value>
+	</util:list>
+	
+	<!-- standalone Map example -->
+	<util:map map-class="java.util.HashMap" id="fee1">
+		 <entry key="Java 1.8" value="8000" />
+		 <entry key="Spring Framework" value="10000" />
+		 <entry key="Hibernet" value="5000" />
+	</util:map>
+	
+	<!-- standalone Properties example -->
+	<util:properties id="details">
+		<prop key="name">Sawan</prop>
+		<prop key="address">Nagpur</prop>
+		<prop key="designation">Software Engg</prop>
+	</util:properties>
+	
+	<bean class="com.springcore.collections.standalone.Person" name="p1">
+		<property name="friends">
+			<ref bean="personFriends" />
+		</property>
+		<property name="feeStructure" ref="fee1" />
+		<property name="properties" ref="details" />
+		
+	</bean>
+	
+	<bean class="com.springcore.collections.standalone.Person" name="p2">
+		<property name="friends" ref="personFriends" />
+		<property name="feeStructure" ref="fee1" />
+	</bean>
+	
+	<bean class="com.springcore.collections.standalone.Person" name="p3" p:friends-ref="personFriends" p:feeStructure-ref="fee1" />
+</beans>

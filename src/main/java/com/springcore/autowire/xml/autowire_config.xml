@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- autowire using XML -->
+	<!-- to used autowire=byName, we need keep variable name at Employee & below tag name shld be same -->
+	<!-- if below tag name is not same then we can used autowire=byType to initialize Address autowired -->
+	<!-- if we dont above these option then we can intialise the Address using autowire=constructor, this time it don't look for name property, instead looked for constructor -->
+	<bean class="com.springcore.autowire.xml.Address" name="address"> <!-- name="address" -->
+		<property name="street" value="Wadi, Amravati road" />
+		<property name="city" value="Nagpur" />
+		<property name="state" value="MH" />
+		<property name="zip" value="440023" />
+	</bean>
+	
+	<bean class="com.springcore.autowire.xml.Employee" name="emp1" autowire="constructor" />
+	<!-- autowire="constructor" -->
+	<!-- autowire="byType --> 
+	<!-- autowire="byName" -->
+	
+
+</beans>

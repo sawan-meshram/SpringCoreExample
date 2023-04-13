@@ -13,6 +13,8 @@ public class TestEmployee {
 		System.out.println(e1.getPhones());
 		System.out.println(e1.getCourses());
 		System.out.println(e1.getProps());
+		System.out.println(e1.getPhones().getClass().getName());
+
 				
 
 	}
