@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- to apply annotation on class, it need to enable context annotation config -->
+	<!-- it enable all type of annotation -->
+	<context:annotation-config />
+	
+	<!-- or alternate we can used CommonAnnotationBeanPostProcessor bean to enable annotation -->
+	<!-- it only enable PreConstruct and PreDestroy annotation -->
+	<!-- used above or below to call init & destroy method --> 
+	<!-- <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" /> -->
+	
+	<!-- init and destroy method name can be anything, but defined proper function name to init-method & destroy-method here -->
+	<!-- declaring lifecycle using XML --> 
+	<bean class="com.springcore.lifecycle.Kachori" name="kachori" init-method="init_1" destroy-method="destroy_1">
+		<constructor-arg value="25" />
+	</bean>
+
+	<!-- declaring lifecycle using interface InitializingBean & DisposableBean -->
+	<bean class="com.springcore.lifecycle.Sprite" name="sprite">
+		<property name="price" value="35" />
+	</bean>
+	
+	<!-- declaring lifecycle using PreConstruct and PreDestroy annotation -->
+	<bean class="com.springcore.lifecycle.MilkCoffee" name="c1" p:price="20" />
+</beans>

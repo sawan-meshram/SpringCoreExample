@@ -8,14 +8,14 @@ public class Person {
 	private Certificate certificate;
 	private List<String> address;
 	
-	private Person(int id, String name, Certificate certificate) {
+	public Person(int id, String name, Certificate certificate) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.certificate = certificate;
 	}
 
-	private Person(int id, String name, Certificate certificate, List<String> address) {
+	public Person(int id, String name, Certificate certificate, List<String> address) {
 		super();
 		this.id = id;
 		this.name = name;

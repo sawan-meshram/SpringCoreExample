@@ -15,11 +15,11 @@ public class A {
 	public void setB(B b) {
 		this.b = b;
 	}
-	private A() {
+	public A() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	private A(int x, B b) {
+	public A(int x, B b) {
 		super();
 		this.x = x;
 		this.b = b;

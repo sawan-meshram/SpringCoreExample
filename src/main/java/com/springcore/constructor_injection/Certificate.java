@@ -3,7 +3,7 @@ package com.springcore.constructor_injection;
 public class Certificate {
 	private String name;
 
-	private Certificate(String name) {
+	public Certificate(String name) {
 		super();
 		this.name = name;
 	}

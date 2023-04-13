@@ -11,12 +11,12 @@ public class B {
 		this.y = y;
 	}
 
-	private B() {
+	public B() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	private B(int y) {
+	public B(int y) {
 		super();
 		this.y = y;
 	}

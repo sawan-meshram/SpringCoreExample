@@ -21,6 +21,15 @@ public class PersonMain {
 		//declare list collection
 		Person p4 = context.getBean("p4", Person.class);
 		System.out.println(p4);
+		
+		Addition add1 = context.getBean("add_int", Addition.class);
+		add1.printSum();
+		
+		Addition add2 = context.getBean("add_double", Addition.class);
+		add2.printSum();
+		
+		Addition add3 = context.getBean("add_1", Addition.class);
+		add3.printSum();
 	}
 
 }

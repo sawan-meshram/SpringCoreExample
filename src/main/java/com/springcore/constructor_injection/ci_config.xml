@@ -49,4 +49,21 @@
 		</constructor-arg> 
 	</bean>
 	
+	<!-- create ambiguity with defining overloading constructor -->
+	<!-- by default the args type consider as string -->
+	<bean class="com.springcore.constructor_injection.Addition" name="add_int" c:a="10" c:b="20" />
+	
+	<!-- can specify the args type to call respective constructor -->
+	<bean class="com.springcore.constructor_injection.Addition" name="add_double">
+		<constructor-arg value="20.0" type="double" />
+		<constructor-arg value="50.0" type="double" />
+	</bean>
+
+	<!-- can change the constructor args order by specifying the index -->
+	<bean class="com.springcore.constructor_injection.Addition" name="add_1">
+		<constructor-arg value="40" type="int" index="1" />
+		<constructor-arg value="50" type="int" index="0" />
+	</bean>
+	
+	
 </beans>

@@ -42,11 +42,11 @@ public class Employee {
 	public void setCourses(Map<String, String> courses) {
 		this.courses = courses;
 	}
-	private Employee() {
+	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	private Employee(String name, List<String> phones, Set<String> address, Map<String, String> courses) {
+	public Employee(String name, List<String> phones, Set<String> address, Map<String, String> courses) {
 		super();
 		this.name = name;
 		this.phones = phones;
